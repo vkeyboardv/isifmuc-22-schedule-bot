@@ -115,20 +115,7 @@
       "details": ""
     }
   ],
-  "5": [
-    {
-      "lecture": 6,
-      "timeStart": "01:39",
-      "timeEnd": "19:45",
-      "week": 2,
-      "subgroup": "0",
-      "subject": "Data Models and Management (FMISM22101)",
-      "auditorium": "SRL-I 501",
-      "lecturer": "Dr. Titas Savickas",
-      "type": "Practical exercises (practical work)",
-      "details": ""
-    }
-  ],
+  "5": [],
   "6": [],
   "7": []
 }
