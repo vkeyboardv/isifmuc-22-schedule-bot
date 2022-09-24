@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "beforeMinutes": 5,
+    "timezone": "Europe/Kiev"
+  },
+  "tg": {
+    "botToken": "",
+    "chatId": ""
+  }
+}
