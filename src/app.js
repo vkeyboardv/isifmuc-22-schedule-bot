@@ -34,17 +34,22 @@ ${details ? `Details: ${details}` : ''}
 
 const start = async ({ notification, settings, schedule }) => {
   try {
+    console.log(`[${new Date().toISOString()}]: Start`);
     const { timezone } = settings;
     const mondayFirstWeek = new Date('9/12/2022');
 
     const startDate = moment(mondayFirstWeek).tz(timezone);
     const today = moment().tz(timezone);
 
+    console.log(`[${new Date().toISOString()}]: Getting current week number`);
     const weekNumber = getCurrentWeekNumber(startDate, today);
 
     const todayDateElements = getElementsFromMomentDate(today);
+
+    console.log(`[${new Date().toISOString()}]: Getting schedule`);
     const todaySchedule = schedule[todayDateElements.day].filter(lecture => lecture.week === weekNumber);
 
+    console.log(`[${new Date().toISOString()}]: Schedule - `, JSON.stringify(todaySchedule));
     for (const schedule of todaySchedule) {
       const [hour, minute] = schedule.timeStart.split(':');
 
@@ -62,6 +67,7 @@ const start = async ({ notification, settings, schedule }) => {
       const timeout = getMomentDuration(today, lectureDate).asMilliseconds();
 
       setTimeout(() => {
+        console.log(`[${new Date().toISOString()}]: Sending notification message - `, JSON.stringify(schedule));
         const msg = generateNotificationMessage(schedule, settings.beforeMinutes);
 
         notification.send(msg);
