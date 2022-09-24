@@ -20,8 +20,8 @@ const getElementsFromMomentDate = momentsDate => {
   return { minute, hour, day, date, month, year };
 };
 
-const generateNotificationMessage = ({ subject, timeStart, auditorium, type, lecturer, details }) => {
-  const html = `⏰ <b>${subject}</b> starting in 5 minutes (${timeStart})
+const generateNotificationMessage = ({ subject, timeStart, auditorium, type, lecturer, details }, beforeMinutes) => {
+  const html = `⏰ <b>${subject}</b> starting in ${beforeMinutes} minutes (${timeStart})
 
 Auditorium: ${auditorium}
 Type: ${type}
@@ -62,7 +62,7 @@ const start = async ({ notification, settings, schedule }) => {
       const timeout = getMomentDuration(today, lectureDate).asMilliseconds();
 
       setTimeout(() => {
-        const msg = generateNotificationMessage(schedule);
+        const msg = generateNotificationMessage(schedule, settings.beforeMinutes);
 
         notification.send(msg);
       }, timeout);
