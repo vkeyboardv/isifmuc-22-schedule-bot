@@ -69,6 +69,8 @@ const start = async ({ notification, settings, schedule }) => {
 
       const timeout = getMomentDuration(today, lectureDate).asMilliseconds();
 
+      if (timeout <= 0) return;
+
       setTimeout(() => {
         console.log(`[${new Date().toISOString()}]: Sending notification message - `, JSON.stringify(schedule));
         const msg = generateNotificationMessage(schedule, settings.beforeMinutes);
