@@ -41,10 +41,13 @@ const start = async ({ notification, settings, schedule }) => {
     const startDate = moment(mondayFirstWeek).tz(timezone);
     const today = moment().tz(timezone);
 
+    console.log(`[${new Date().toISOString()}]: Date - `, { startDate, today });
+
     console.log(`[${new Date().toISOString()}]: Getting current week number`);
     const weekNumber = getCurrentWeekNumber(startDate, today);
 
     const todayDateElements = getElementsFromMomentDate(today);
+    console.log(`[${new Date().toISOString()}]: Today date elements - `, todayDateElements);
 
     console.log(`[${new Date().toISOString()}]: Getting schedule`);
     const todaySchedule = schedule[todayDateElements.day].filter(lecture => lecture.week === weekNumber);
