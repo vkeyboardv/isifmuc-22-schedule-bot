@@ -12,11 +12,11 @@ class Notification {
 
     // Matches "/help"
     this.instance.onText(/^(\/help)$/, (msg, _match) => {
+      const chatId = msg.chat.id;
+
       console.log('/help');
 
       console.log({ chatId });
-
-      const chatId = msg.chat.id;
 
       const html = `<b>/today</b> - Get today schedule`;
 
