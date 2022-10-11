@@ -18,7 +18,7 @@ const CronJob = require('cron').CronJob;
 
 (async () => {
   try {
-    const pattern = '0 11 * * *'; // every day at 11:00 (Kyiv)
+    const pattern = `${nconf.get('settings').cronMinutes} ${nconf.get('settings').cronHours} * * *`;
 
     console.log(`[${new Date().toISOString()}]: Initializing a cron job - `, pattern);
     new CronJob(pattern, () => start(container), null, true, container.settings.timezone);

@@ -1,7 +1,9 @@
 {
   "settings": {
     "beforeMinutes": 5,
-    "timezone": "Europe/Kiev"
+    "timezone": "Europe/Kiev",
+    "cronHours": "19",
+    "cronMinutes": "20"
   },
   "tg": {
     "botToken": "",
