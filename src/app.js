@@ -54,29 +54,10 @@ const start = async ({ notification, settings, schedule }) => {
 
     console.log(`[${new Date().toISOString()}]: Schedule - `, JSON.stringify(todaySchedule));
     for (const schedule of todaySchedule) {
-      const [hour, minute] = schedule.timeStart.split(':');
+      console.log(`[${new Date().toISOString()}]: Sending notification message - `, JSON.stringify(schedule));
+      const msg = generateNotificationMessage(schedule, settings.beforeMinutes);
 
-      const lectureDate = moment()
-        .tz(timezone)
-        .set({
-          hour,
-          minute,
-          date: todayDateElements.date,
-          month: todayDateElements.month,
-          year: todayDateElements.year,
-        })
-        .subtract(settings.beforeMinutes, 'minutes');
-
-      const timeout = getMomentDuration(today, lectureDate).asMilliseconds();
-
-      if (timeout <= 0) return;
-
-      setTimeout(() => {
-        console.log(`[${new Date().toISOString()}]: Sending notification message - `, JSON.stringify(schedule));
-        const msg = generateNotificationMessage(schedule, settings.beforeMinutes);
-
-        notification.send(msg);
-      }, timeout);
+      notification.send(msg);
     }
   } catch (err) {
     console.log(err);

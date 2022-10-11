@@ -23,6 +23,30 @@
       "lecturer": "Dr. Jolanta Miliauskaitė",
       "type": "Laboratory work (laboratory works) (VK)",
       "details": "https://teams.microsoft.com/l/channel/19%3aA1QSSaz9XWm1YqY8I1Tzx9xOi1S8SxTWbvZKIVuPZ2I1%40thread.tacv2/General?groupId=e03aba24-1c93-4229-b132-ea26b08b9dea&tenantId=99f54475-1e0e-4911-a4f0-4eeaa4a62080"
+    },
+    {
+      "lecture": 5,
+      "timeStart": "16:20",
+      "timeEnd": "17:55",
+      "week": 2,
+      "subgroup": "0",
+      "subject": "Organizational Information Systems (with course work) (FMISM22100)",
+      "auditorium": "",
+      "lecturer": "Dr. Jolanta Miliauskaitė",
+      "type": "Lectures (VK)",
+      "details": "https://teams.microsoft.com/l/channel/19%3aA1QSSaz9XWm1YqY8I1Tzx9xOi1S8SxTWbvZKIVuPZ2I1%40thread.tacv2/General?groupId=e03aba24-1c93-4229-b132-ea26b08b9dea&tenantId=99f54475-1e0e-4911-a4f0-4eeaa4a62080"
+    },
+    {
+      "lecture": 6,
+      "timeStart": "18:10",
+      "timeEnd": "19:45",
+      "week": 2,
+      "subgroup": "0",
+      "subject": "Organizational Information Systems (with course work) (FMISM22100)",
+      "auditorium": "",
+      "lecturer": "Dr. Jolanta Miliauskaitė",
+      "type": "Laboratory work (laboratory works) (VK)",
+      "details": "https://teams.microsoft.com/l/channel/19%3aA1QSSaz9XWm1YqY8I1Tzx9xOi1S8SxTWbvZKIVuPZ2I1%40thread.tacv2/General?groupId=e03aba24-1c93-4229-b132-ea26b08b9dea&tenantId=99f54475-1e0e-4911-a4f0-4eeaa4a62080"
     }
   ],
   "2": [
@@ -31,6 +55,18 @@
       "timeStart": "16:20",
       "timeEnd": "17:55",
       "week": 1,
+      "subgroup": "0",
+      "subject": "Software Requirements Analysis and Specification (FMISM22102)",
+      "auditorium": "",
+      "lecturer": "Dr. Asta Slotkienė",
+      "type": "Lectures (VK)",
+      "details": "https://teams.microsoft.com/l/channel/19%3a7042ac3450614e7b9c291df6e66fc885%40thread.tacv2/0_Theory?groupId=7e066fb0-ea0e-4696-b593-f1e90ba0a0bf&tenantId=99f54475-1e0e-4911-a4f0-4eeaa4a62080"
+    },
+    {
+      "lecture": 5,
+      "timeStart": "16:20",
+      "timeEnd": "17:55",
+      "week": 2,
       "subgroup": "0",
       "subject": "Software Requirements Analysis and Specification (FMISM22102)",
       "auditorium": "",
@@ -57,6 +93,18 @@
       "timeStart": "16:20",
       "timeEnd": "17:55",
       "week": 1,
+      "subgroup": "0",
+      "subject": "Fundamentals of Scientific Research and Innovations (FMISM17100)",
+      "auditorium": "SRL-I 621",
+      "lecturer": "Assoc Prof Dr. Rūta Simanavičienė",
+      "type": "Lectures",
+      "details": ""
+    },
+    {
+      "lecture": 5,
+      "timeStart": "16:20",
+      "timeEnd": "17:55",
+      "week": 2,
       "subgroup": "0",
       "subject": "Fundamentals of Scientific Research and Innovations (FMISM17100)",
       "auditorium": "SRL-I 621",
