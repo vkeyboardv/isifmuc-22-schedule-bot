@@ -12,6 +12,10 @@ class Notification {
 
     // Matches "/help"
     this.instance.onText(/^(\/help)$/, (msg, _match) => {
+      console.log('/help');
+
+      console.log({ chatId });
+
       const chatId = msg.chat.id;
 
       const html = `<b>/today</b> - Get today schedule`;
@@ -27,6 +31,10 @@ class Notification {
     this.instance.onText(/^(\/today)$/, (msg, _match) => {
       const chatId = msg.chat.id;
 
+      console.log('/today');
+
+      console.log({ chatId });
+
       // get today
       const { timezone } = this.settings;
       const startDate = getStartDate(timezone);
@@ -37,6 +45,8 @@ class Notification {
       const todayDateElements = getElementsFromMomentDate(today);
 
       const todaySchedule = this.schedule[todayDateElements.day].filter(lecture => lecture.week === weekNumber);
+
+      console.log({ todaySchedule });
 
       const html = `
 <b>Today Schedule:</b>
