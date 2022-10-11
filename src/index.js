@@ -9,7 +9,7 @@ const schedule = require('./schedule.json');
 const { start } = require('./app');
 
 const container = {
-  notification: new Notification(nconf.get('tg:botToken'), nconf.get('tg:chatId')),
+  notification: new Notification(nconf.get('tg:botToken'), nconf.get('tg:chatId'), nconf.get('settings'), schedule),
   settings: nconf.get('settings'),
   schedule,
 };
