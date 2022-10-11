@@ -28,14 +28,21 @@ const getElementsFromMomentDate = momentsDate => {
   return { minute, hour, day, date, month, year };
 };
 
-const generateNotificationMessage = ({ subject, timeStart, auditorium, type, lecturer, details }, beforeMinutes) => {
-  const html = `⏰ <b>${subject}</b> starting in ${beforeMinutes} minutes (${timeStart})
+const generateNotificationMessage = todaySchedule => {
+  const html = `<b>Today Schedule:</b>
+${todaySchedule.map(schedule => {
+  const { subject, timeStart, auditorium, type, lecturer, details } = schedule;
 
+  return `
+
+<b>${subject}</b>
+
+Time: ${timeStart}
 Auditorium: ${auditorium}
 Type: ${type}
 Lecturer: ${lecturer}
-${details ? `Details: ${details}` : ''}
-`;
+${details ? `Details: ${details}` : ''}`;
+})}`;
 
   return html;
 };

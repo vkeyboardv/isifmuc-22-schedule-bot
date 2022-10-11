@@ -1,5 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api');
-const { getToday, getCurrentWeekNumber, getStartDate, getElementsFromMomentDate } = require('../helpers');
+const {
+  getToday,
+  getCurrentWeekNumber,
+  getStartDate,
+  getElementsFromMomentDate,
+  generateNotificationMessage,
+} = require('../helpers');
 
 class Notification {
   constructor(botToken, chatId, settings, schedule) {
@@ -14,10 +20,6 @@ class Notification {
     this.instance.onText(/^(\/help)$/, (msg, _match) => {
       const chatId = msg.chat.id;
 
-      console.log('/help');
-
-      console.log({ chatId });
-
       const html = `<b>/today</b> - Get today schedule`;
 
       if (chatId === this.chatId) {
@@ -31,10 +33,6 @@ class Notification {
     this.instance.onText(/^(\/today)$/, (msg, _match) => {
       const chatId = msg.chat.id;
 
-      console.log('/today');
-
-      console.log({ chatId });
-
       // get today
       const { timezone } = this.settings;
       const startDate = getStartDate(timezone);
@@ -46,13 +44,7 @@ class Notification {
 
       const todaySchedule = this.schedule[todayDateElements.day].filter(lecture => lecture.week === weekNumber);
 
-      console.log({ todaySchedule });
-
-      const html = `
-<b>Today Schedule:</b>
-
-<pre><code>${JSON.stringify(todaySchedule, null, 2)}</code></pre>
-`;
+      const html = generateNotificationMessage(todaySchedule);
 
       if (chatId === this.chatId) {
         this.instance.sendMessage(chatId, html, {
